@@ -24,4 +24,9 @@ public class HomePage extends BasePage {
         return new LoginPage(driver);
     }
 
+    @FindBy(css = "[href='/let-car-work']")
+    WebElement addCarLink;
+    public void goToAddCarPage(){
+        click(addCarLink);
+    }
 }

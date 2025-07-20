@@ -46,7 +46,7 @@ public class AddCarPage extends BasePage {
     @FindBy(xpath = "//input[@id='price']")
     WebElement priceInput;
 
-    @FindBy(css = "label[for='photos']")
+    @FindBy(css = "input[type='file']")
     WebElement addPhotos;
     public AddCarPage uploadPhoto(String path) {
         addPhotos.sendKeys(path);
@@ -65,7 +65,8 @@ public class AddCarPage extends BasePage {
         carClassInput.sendKeys("Luxury");
         regNumberInput.sendKeys("B-1234");
         priceInput.sendKeys("120");
-        addPhotos.sendKeys("src/test/resources/audi_a6_2021.png");
+        addPhotos.click();
+        uploadPhoto("C:/Desktop/audi_a6_2021.jpg");
         return this;
     }
 
